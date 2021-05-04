@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">yiw_task9</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_home">Home</string>
+    <string name="cash_points">Cash Points</string>
+    <string name="title_scan_code">Scan Code</string>
+    <string name="promotions">Promotions</string>
+    <string name="title_my_account">My Account</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="account_info_settings_more"><![CDATA[Account info, Settings & More]]></string>
+    <string name="account">ACCOUNT</string>
+    <string name="account_information">Account Information</string>
+    <string name="order_new_debit_card">Order New Debit Card</string>
+    <string name="change_easypaisa_account_pin">Change Easypaisa Account PIN</string>
+    <string name="link_telenor_microfinance_bank">Link Telenor Microfinance Bank</string>
+    <string name="link_debit_card">Link Debit Card</string>
+    <string name="get_your_tax_certificate">Get your tax Certificate</string>
+    <string name="general">GENERAL</string>
+    <string name="notifications">Notifications</string>
+    <string name="finger_print_face_login">Finger Print/Face Login</string>
+    <string name="package_str">package:</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="permission_dialog_message">Some feature of app may not work if permission is not granted. Go to setting to allow permission</string>
+    <string name="cancel">Cancel</string>
+    <string name="goto_setting">Go to setting</string>
+    <string name="permission_alert">Permission Alert</string>
 </resources>

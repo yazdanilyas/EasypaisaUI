@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_cash_points"
+        android:icon="@drawable/ic_location"
+        android:title="@string/cash_points" />
+
+    <item
+        android:id="@+id/navigation_qr_scan"
+        android:icon="@drawable/ic_qr"
+        android:title="@string/title_scan_code" />
+    <item
+        android:id="@+id/navigation_promotions"
+        android:icon="@drawable/ic_promotions"
+        android:title="@string/promotions" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/title_my_account" />
+
+
+</menu>

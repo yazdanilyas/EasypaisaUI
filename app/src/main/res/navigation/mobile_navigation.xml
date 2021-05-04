@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.techswivel.yiw_task9.ui.fragments.bottomnav.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.techswivel.yiw_task9.ui.fragments.bottomnav.promotions.PromotionsFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_promotions" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.techswivel.yiw_task9.ui.fragments.bottomnav.qr.QrFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_qr" />
+    <fragment
+        android:id="@+id/nav_promotions"
+        android:name="com.techswivel.yiw_task9.ui.fragments.bottomnav.qr.QrFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_qr" />
+    <fragment
+        android:id="@+id/nav_announcements"
+        android:name="com.techswivel.yiw_task9.ui.fragments.bottomnav.qr.QrFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_qr" />
+</navigation>
