@@ -1,13 +1,14 @@
 package com.techswivel.yiw_task9.ui.fragments.bottomnav.promotions
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.techswivel.yiw_task9.data.repositories.AppRepositories
+import com.techswivel.yiw_task9.models.Promotions
 
 class PromotionsViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+    var promotionsList: MutableList<Any> = ArrayList()
+    fun getPromotions(): MutableLiveData<ArrayList<Promotions>> {
+        return AppRepositories.getPromotions()
     }
-    val text: LiveData<String> = _text
+
 }

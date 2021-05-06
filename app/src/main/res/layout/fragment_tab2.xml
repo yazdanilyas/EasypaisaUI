@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragments.bottomnav.pagerfragments.Tab1Fragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/myCashImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_send_money"
+        app:layout_constraintEnd_toStartOf="@+id/giftImg"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/giftImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_gift"
+        app:layout_constraintEnd_toStartOf="@+id/busTicketImg"
+        app:layout_constraintStart_toEndOf="@+id/myCashImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/busTicketImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/giftImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/myCahsBackTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_cashback"
+        android:textSize="@dimen/_12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/myCashImg"
+        app:layout_constraintStart_toStartOf="@+id/myCashImg"
+        app:layout_constraintTop_toBottomOf="@+id/myCashImg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tohfaTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/easypaisa_tohfa"
+        android:textSize="@dimen/_12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/giftImg"
+        app:layout_constraintStart_toStartOf="@+id/giftImg"
+        app:layout_constraintTop_toBottomOf="@+id/giftImg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/busTicketsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bus_tickets"
+        android:textSize="@dimen/_12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/busTicketImg"
+        app:layout_constraintStart_toStartOf="@+id/busTicketImg"
+        app:layout_constraintTop_toBottomOf="@+id/busTicketImg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/discountImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:src="@drawable/ic_discount"
+        app:layout_constraintEnd_toStartOf="@+id/giftImg"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/myCahsBackTv" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moreImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:src="@drawable/ic_more"
+        app:layout_constraintEnd_toStartOf="@+id/busTicketImg"
+        app:layout_constraintStart_toEndOf="@+id/myCashImg"
+        app:layout_constraintTop_toBottomOf="@id/tohfaTv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/addCashTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/discount"
+        android:textSize="@dimen/_12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/discountImg"
+        app:layout_constraintStart_toStartOf="@+id/discountImg"
+        app:layout_constraintTop_toBottomOf="@+id/discountImg" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/moreTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/more"
+        android:textSize="@dimen/_12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/moreImg"
+        app:layout_constraintStart_toStartOf="@+id/moreImg"
+        app:layout_constraintTop_toBottomOf="@+id/moreImg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
