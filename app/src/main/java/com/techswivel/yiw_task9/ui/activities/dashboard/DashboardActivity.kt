@@ -5,10 +5,8 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.techswivel.yiw_task9.R
 import com.techswivel.yiw_task9.constants.Constants.REQUEST_IMAGE_CAPTURE
@@ -31,19 +29,8 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-        setSupportActionBar(mBinding.appBarMainLayout.toolbar)
         addFragment(HomeFragment())
         setListeners()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.tool_bar_menu, menu)
-        return true
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     override fun onRequestPermissionsResult(

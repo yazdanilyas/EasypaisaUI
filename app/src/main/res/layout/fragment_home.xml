@@ -1,144 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/home_background"
-    android:paddingHorizontal="@dimen/_15dp"
     tools:context=".ui.fragments.bottomnav.home.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        android:id="@+id/toolBarLayout"
+        layout="@layout/layout_fragmnt_home_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarLayout">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/balanceInfoCard"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_175dp"
-            android:layout_marginTop="@dimen/_5dp"
-            app:cardCornerRadius="@dimen/_10dp"
-            app:cardElevation="@dimen/_5dp"
-            app:contentPadding="@dimen/_10dp"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_15dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <include
+                android:id="@+id/balanceInfoLayout"
+                layout="@layout/layout_fragment_home_balance_info_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/logo"
-                    android:layout_width="@dimen/_100dp"
-                    android:layout_height="@dimen/_40dp"
-                    android:src="@drawable/ic_easypaisa"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@+id/importantShortcutCard"
+                layout="@layout/layout_fragment_home_important_shortcut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                app:layout_constraintTop_toBottomOf="@id/balanceInfoLayout" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10dp"
-                    android:src="@drawable/ic_star"
-                    app:layout_constraintRight_toLeftOf="@+id/cashBackLabelTv"
-                    app:layout_constraintTop_toTopOf="@id/cashBackLabelTv" />
+            <include
+                android:id="@+id/viewPagerLayout"
+                layout="@layout/layout_fragment_home_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                app:layout_constraintTop_toBottomOf="@id/importantShortcutCard" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/cashBackLabelTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5dp"
-                    android:text="@string/my_cashbacks"
-                    android:textSize="@dimen/_15sp"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@+id/promotionsRecyclerLayout"
+                layout="@layout/layout_fragment_home_promotions_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                app:layout_constraintTop_toBottomOf="@id/viewPagerLayout" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/currentBalLabelTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5dp"
-                    android:text="@string/current_balance"
-                    android:textSize="@dimen/_10sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/logo" />
+            <include
+                android:id="@+id/packagesRecyclerLayout"
+                layout="@layout/layout_fragment_home_packages_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                app:layout_constraintTop_toBottomOf="@id/promotionsRecyclerLayout" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/currentBalTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5dp"
-                    android:text="@string/rs_100_0"
-                    android:textSize="@dimen/_20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/currentBalLabelTv" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/updateIconImg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_15dp"
-                    android:src="@drawable/ic_refresh"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/currentBalTv" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10dp"
-                    android:text="@string/last_update_5_min_go"
-                    app:layout_constraintBottom_toBottomOf="@+id/updateIconImg"
-                    app:layout_constraintLeft_toRightOf="@id/updateIconImg"
-                    app:layout_constraintTop_toTopOf="@id/updateIconImg" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_35dp"
-                    android:background="@drawable/button_shape"
-                    android:text="@string/add_cash"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_15sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.65" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <include
-            android:id="@+id/importantShortcutCard"
-            layout="@layout/layout_fragment_home_important_shortcut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10dp"
-            app:layout_constraintTop_toBottomOf="@id/balanceInfoCard" />
-
-        <include
-            android:id="@+id/viewPagerLayout"
-            layout="@layout/layout_fragment_home_view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10dp"
-            app:layout_constraintTop_toBottomOf="@id/importantShortcutCard" />
-
-        <include
-            android:id="@+id/promotionsRecyclerLayout"
-            layout="@layout/layout_fragment_home_promotions_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5dp"
-            app:layout_constraintTop_toBottomOf="@id/viewPagerLayout" />
-
-        <include
-            android:id="@+id/packagesRecyclerLayout"
-            layout="@layout/layout_fragment_home_packages_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5dp"
-            app:layout_constraintTop_toBottomOf="@id/promotionsRecyclerLayout" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <include
+                android:id="@+id/favoritesRecyclerLayout"
+                layout="@layout/layout_fragment_home_favorites_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                app:layout_constraintTop_toBottomOf="@id/packagesRecyclerLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

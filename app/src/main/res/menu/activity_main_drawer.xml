@@ -5,16 +5,55 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_account_level"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/account_level" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_account_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/account_settings" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_transaction_history"
+            android:icon="@drawable/ic_transaction_history"
+            android:title="@string/transaction_history" />
+        <item
+            android:id="@+id/nav_goals_reward"
+            android:icon="@drawable/ic_goals"
+            android:title="@string/goals_rewards" />
+        <item
+            android:id="@+id/nav_cash_bykea"
+            android:icon="@drawable/ic_bykea"
+            android:title="@string/add_cash_through_bykea" />
+        <item
+            android:id="@+id/nav_approvals"
+            android:icon="@drawable/ic_approvals"
+            android:title="@string/my_approvals" />
+        <item
+            android:id="@+id/nav_scheduled_transactions"
+            android:icon="@drawable/ic_clock"
+            android:title="@string/scheduled_transactions" />
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/ic_favroties"
+            android:title="@string/my_favorites" />
+
+        <item android:title="@string/help">
+            <menu>
+                <item
+                    android:id="@+id/nav_fee_detail"
+                    android:icon="@drawable/ic_fee_detail"
+                    android:title="@string/for_details" />
+                <item
+                    android:id="@+id/nav_help"
+                    android:icon="@drawable/ic_help"
+                    android:title="@string/help_faq_s" />
+                <item
+                    android:id="@+id/nav_log_out"
+                    android:icon="@drawable/ic_sign_out"
+                    android:title="@string/sign_out" />
+
+            </menu>
+        </item>
+
     </group>
 </menu>

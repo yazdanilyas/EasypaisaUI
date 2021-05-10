@@ -2,6 +2,8 @@ package com.techswivel.yiw_task9.data.repositories
 
 import androidx.lifecycle.MutableLiveData
 import com.techswivel.yiw_task9.R
+import com.techswivel.yiw_task9.models.Contact
+import com.techswivel.yiw_task9.models.MobilePackage
 import com.techswivel.yiw_task9.models.Promotions
 
 class AppRepositories {
@@ -34,6 +36,65 @@ class AppRepositories {
 
             promotions.postValue(promotionList)
             return promotions
+        }
+
+        fun getFavorites(): MutableLiveData<ArrayList<Contact>> {
+            val favoritesList = ArrayList<Contact>()
+            val favorites = MutableLiveData<ArrayList<Contact>>()
+            val names = arrayOf("Imran Anjum", "Husnain", "Amjad", "Rana Yousaf", "Farhan Bhatti")
+            for (i in names.indices) {
+
+                favoritesList.add(Contact(R.drawable.ic_user, names[i]))
+            }
+            favorites.postValue(favoritesList)
+            return favorites
+        }
+
+        fun getMobilePackages(): MutableLiveData<java.util.ArrayList<MobilePackage>> {
+            val packageList = ArrayList<MobilePackage>()
+            val packages = MutableLiveData<ArrayList<MobilePackage>>()
+            packageList.add(
+                MobilePackage(
+                    "Discounted EasyCard 800",
+                    "Rs. 100 discount",
+                    "validity for 30 days only",
+                    5000,
+                    300,
+                    5000,
+                    18.5f,
+                    "Rs. 665",
+                    "For 3 subscription only. 9 Gbs are only useable between 1 to 9 am"
+                )
+            )
+            packageList.add(
+                MobilePackage(
+                    "Monthly Social Pack Plus",
+                    "Rs. 100 discount",
+                    "validity for 30 days only",
+                    5000,
+                    300,
+                    5000,
+                    18.5f,
+                    "Rs. 85",
+                    "For 3 subscription only. 9 Gbs are only useable between 1 to 9 am"
+                )
+            )
+            packageList.add(
+                MobilePackage(
+                    "Super Recharge Offer",
+                    "Rs. 100 discount",
+                    "validity for 30 days only",
+                    5000,
+                    300,
+                    5000,
+                    18.5f,
+                    "Rs. 53",
+                    "For 3 subscription only. 9 Gbs are only useable between 1 to 9 am"
+                )
+            )
+
+            packages.postValue(packageList)
+            return packages
         }
 
     }

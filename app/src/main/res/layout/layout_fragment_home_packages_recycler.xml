@@ -25,11 +25,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/promotionsRecycler"
+        android:id="@+id/packagesRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/packagesLabelTv"
-        app:reverseLayout="true"
-        tools:listitem="@layout/item_promotions_horizontal_recycler" />
+        tools:listitem="@layout/item_packages_horizontal_recycler" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

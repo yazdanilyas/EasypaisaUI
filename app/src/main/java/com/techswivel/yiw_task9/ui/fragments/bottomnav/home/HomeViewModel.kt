@@ -1,13 +1,21 @@
 package com.techswivel.yiw_task9.ui.fragments.bottomnav.home
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.techswivel.yiw_task9.data.repositories.AppRepositories
+import com.techswivel.yiw_task9.models.Contact
+import com.techswivel.yiw_task9.models.MobilePackage
 
 class HomeViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    val packagesList: MutableList<Any> = ArrayList()
+    var favoritesList: MutableList<Any> = ArrayList()
+    fun getFavorites(): MutableLiveData<ArrayList<Contact>> {
+        return AppRepositories.getFavorites()
     }
-    val text: LiveData<String> = _text
+
+    fun getMobilePackages(): MutableLiveData<ArrayList<MobilePackage>> {
+        return AppRepositories.getMobilePackages()
+    }
+
+
 }

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_350dp"
+        android:layout_marginBottom="?actionBarSize"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="@dimen/_55dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_10dp"
+            app:cardCornerRadius="@dimen/_10dp"
+            app:cardElevation="@dimen/_5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sheetHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/darkGreen"
+                    android:padding="@dimen/_10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cash_points"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_25sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/bottomHideShowImg"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/bottomHideShowImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_up"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/biomatricMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:paddingHorizontal="@dimen/_15dp"
+                    android:text="@string/biomatric_cashpoint_message"
+                    android:textColor="@color/orange"
+                    app:layout_constraintTop_toBottomOf="@+id/sheetHeader" />
+
+                <RelativeLayout
+                    android:id="@+id/cashPointLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:layout_marginTop="@dimen/_15dp"
+                    android:background="@drawable/button_shape_buy"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/biomatricMessage">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/cashPointImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_location_white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/cashPointImg"
+                        android:text="@string/cash_points"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cashPointRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15dp"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:background="@drawable/button_shape_buy"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/biomatricMessage">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/bvsPointImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_location_white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/bvsPointImg"
+                        android:scrollHorizontally="true"
+                        android:text="@string/bvs_cash_points"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/locationKmTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:text="@string/_18_0_location"
+                    android:textSize="@dimen/_20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/cashPointLeft"
+                    app:layout_constraintRight_toRightOf="@+id/cashPointLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/cashPointLeft" />
+
+                <com.google.android.material.slider.RangeSlider
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:foregroundTint="@color/colorLightGrey"
+                    app:layout_constraintLeft_toLeftOf="@id/cashPointRight"
+                    app:layout_constraintRight_toRightOf="@id/cashPointRight"
+                    app:layout_constraintTop_toBottomOf="@+id/cashPointRight" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/locationCityTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:paddingStart="@dimen/_4dp"
+                    android:text="@string/km_faisalabad"
+                    android:textSize="@dimen/_15sp"
+                    app:layout_constraintLeft_toLeftOf="@id/locationKmTv"
+                    app:layout_constraintTop_toBottomOf="@+id/locationKmTv" />
+
+                <RelativeLayout
+                    android:id="@+id/howToDepositView"
+                    android:layout_width="@dimen/_300dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_marginStart="@dimen/_20dp"
+                    android:layout_marginTop="@dimen/_35dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:background="@drawable/button_shape_buy"
+                    android:paddingVertical="@dimen/_10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/locationKmTv">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/cashImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_send_money" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/how_to_deposit_cash"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/forwardImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_forward" />
+
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
