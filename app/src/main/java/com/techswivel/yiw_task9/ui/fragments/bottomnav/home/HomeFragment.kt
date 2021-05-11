@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.techswivel.yiw_task9.R
 import com.techswivel.yiw_task9.adapters.CustomViewPagerAdapter
 import com.techswivel.yiw_task9.adapters.FavoritesAdapter
 import com.techswivel.yiw_task9.adapters.PackagesAdapter
@@ -38,12 +42,13 @@ class HomeFragment : Fragment() {
         mViewModel =
             ViewModelProvider(this).get(PromotionsViewModel::class.java)
         mBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        setupViewPager()
         return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupViewPager()
+        openDrawer()
         getAllPromotions()
         getFavoriteContacts()
         getPackages()
@@ -53,10 +58,17 @@ class HomeFragment : Fragment() {
 
     }
 
+    private fun openDrawer() {
+        val toolbar = mBinding.root.findViewById<Toolbar>(R.id.toolBar)
+        val profileImage = toolbar.findViewById<AppCompatImageView>(R.id.drawerProfileImg)
+        profileImage.setOnClickListener {
+            val drawer = requireActivity().findViewById<DrawerLayout>(R.id.drawer_layout)
+            drawer.open()
+        }
+    }
 
     private fun getPackages() {
         homeViewModel.getMobilePackages().observe(viewLifecycleOwner, Observer {
-
             if (it != null && it.isNotEmpty()) {
                 homeViewModel.packagesList.clear()
                 homeViewModel.packagesList.addAll(it)

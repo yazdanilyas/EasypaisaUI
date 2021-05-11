@@ -6,6 +6,8 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.ui.*
 import com.techswivel.yiw_task9.R
@@ -22,16 +24,31 @@ import com.techswivel.yiw_task9.utils.PermissionsUtil
 
 class DashboardActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var mBinding: ActivityDashboardBinding
-
+    private val home = HomeFragment()
+    private val cashPoints = CashPointsFragment()
+    private val promotion = PromotionsFragment()
+    private val account = MyAccountFragment()
+    private val fragmentManager = supportFragmentManager
+    private var activeFragment: Fragment = home
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-        addFragment(HomeFragment())
+        addFragments()
         setListeners()
+        closeDrawer()
     }
+
+    private fun addFragments() {
+        fragmentManager.beginTransaction().apply {
+            add(R.id.nav_host_fragment, home)
+            add(R.id.nav_host_fragment, cashPoints).hide(cashPoints)
+            add(R.id.nav_host_fragment, promotion).hide(promotion)
+            add(R.id.nav_host_fragment, account).hide(account)
+        }.commit()
+    }
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String>,
@@ -54,20 +71,31 @@ class DashboardActivity : AppCompatActivity() {
 
     }
 
+    private fun closeDrawer() {
+        val navView = mBinding.navView.getHeaderView(0)
+        val navBackImg = navView.findViewById<AppCompatImageView>(R.id.navcloseImg)
+        navBackImg.setOnClickListener {
+            mBinding.drawerLayout.close()
+        }
+    }
+
+
     private fun setListeners() {
         setUpBottomNavListener()
+        mBinding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     }
 
     private fun setUpBottomNavListener() {
         mBinding.appBarMainLayout.contentMain.bottomNavView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    val fragment = HomeFragment()
-                    addFragment(fragment)
+                    fragmentManager.beginTransaction().hide(activeFragment).show(home).commit()
+                    activeFragment = home
                 }
                 R.id.navigation_cash_points -> {
-                    val fragment = CashPointsFragment()
-                    addFragment(fragment)
+                    fragmentManager.beginTransaction().hide(activeFragment).show(cashPoints)
+                        .commit()
+                    activeFragment = cashPoints
                 }
                 R.id.navigation_qr_scan -> {
                     if (PermissionsUtil.hasPermission(
@@ -79,20 +107,17 @@ class DashboardActivity : AppCompatActivity() {
                     }
                 }
                 R.id.navigation_promotions -> {
-                    val fragment = PromotionsFragment()
-                    addFragment(fragment)
+                    fragmentManager.beginTransaction().hide(activeFragment).show(promotion).commit()
+                    activeFragment = promotion
                 }
                 R.id.navigation_profile -> {
-                    val fragment = MyAccountFragment()
-                    addFragment(fragment)
+                    fragmentManager.beginTransaction().hide(activeFragment).show(account).commit()
+                    activeFragment = account
                 }
             }
             true
         }
-    }
 
-    private fun addFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, fragment).commit()
     }
 
     private fun pickImageFromCamera() {

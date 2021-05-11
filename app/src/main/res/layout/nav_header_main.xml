@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/navHomeImg"
+            android:id="@+id/navcloseImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -32,7 +32,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_20sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/navHomeImg" />
+            app:layout_constraintTop_toBottomOf="@+id/navcloseImg" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/headingSecondryTv"

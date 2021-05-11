@@ -18,8 +18,9 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
                 android:id="@+id/sendMoneyImg"
-                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_3dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_send_money"
                 app:layout_constraintEnd_toStartOf="@+id/easyLoadImg"
@@ -29,7 +30,7 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/easyLoadImg"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_easy_load"
                 app:layout_constraintEnd_toStartOf="@+id/mobilePackagesImg"
@@ -38,7 +39,7 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/mobilePackagesImg"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_mobile_packages"
                 app:layout_constraintEnd_toStartOf="@+id/billPaymentImg"
@@ -47,7 +48,7 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/billPaymentImg"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_bill_payment"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/send_money"
-                android:textSize="@dimen/_12sp"
+                android:textSize="@dimen/_10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/sendMoneyImg"
                 app:layout_constraintStart_toStartOf="@id/sendMoneyImg"
@@ -71,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/easyload"
-                android:textSize="@dimen/_12sp"
+                android:textSize="@dimen/_10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/easyLoadImg"
                 app:layout_constraintStart_toStartOf="@id/easyLoadImg"
@@ -83,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="@string/mobile_packages"
-                android:textSize="@dimen/_12sp"
+                android:textSize="@dimen/_10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/mobilePackagesImg"
                 app:layout_constraintStart_toStartOf="@id/mobilePackagesImg"
@@ -94,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bill_payment"
-                android:textSize="@dimen/_12sp"
+                android:textSize="@dimen/_10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/billPaymentImg"
                 app:layout_constraintStart_toStartOf="@id/billPaymentImg"
